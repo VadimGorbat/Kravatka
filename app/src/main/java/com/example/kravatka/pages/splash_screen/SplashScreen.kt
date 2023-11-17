@@ -1,6 +1,5 @@
 package com.example.kravatka.pages.splash_screen
 
-import android.window.SplashScreenView
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -12,8 +11,10 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import com.example.kravatka.ui.theme.Purple40
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel,
@@ -27,9 +28,9 @@ fun SplashScreen(
                 onNavigationNext = onNavigationNext
             )
         }
-    ) {
+    )
 
-    }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,8 +53,8 @@ private fun SplashScreenContent(
     modifier: Modifier,
     onNavigationNext: () -> Unit
 ) {
-    Column(modifier = modifier) {
-        Text(text = "splashScreen",
+    Column(modifier = modifier.padding(16.dp)) {
+        Text(text = "Go to WelcomeScreen",
             modifier = modifier.clickable {
                 onNavigationNext.invoke()
             })
